@@ -26,17 +26,17 @@ import javax.swing.JTextField;
 
 public class BorrowForm extends JFrame {
 	// Window Layout
-	private JPanel windowPanel = new JPanel();
-	private JPanel spacingPanel = new JPanel();
+	private JPanel panelWindow = new JPanel();
+	private JPanel panelSpacing = new JPanel();
 	
 	// Car Detail
-	private JPanel carDetailPanel = new JPanel();
-	private JPanel carHeaderPanel = new JPanel();
+	private JPanel panelCarDetail = new JPanel();
+	private JPanel panelCarHeader = new JPanel();
 	
-	private JPanel carTypePanel = new JPanel();
-	private JPanel carDescriptionPanel = new JPanel();
-	private JPanel carRentPeriodPanel = new JPanel();
-	private JPanel carLicensePlatePanel = new JPanel();
+	private JPanel panelCarType = new JPanel();
+	private JPanel panelCarDescription = new JPanel();
+	private JPanel panelCarRentPeriod = new JPanel();
+	private JPanel panelCarLicensePlate = new JPanel();
 	
 	private JLabel labelCarType = new JLabel("Car Type");
 	private JLabel labelCarDescription = new JLabel("Car Description");
@@ -50,13 +50,13 @@ public class BorrowForm extends JFrame {
 	
 	
 	// Renter Detail
-	private JPanel renterDetailPanel = new JPanel();
-	private JPanel renterHeaderPanel = new JPanel();
+	private JPanel panelRenterDetail = new JPanel();
+	private JPanel panelRenterHeader = new JPanel();
 	
-	private JPanel renterNamePanel = new JPanel();
-	private JPanel renterAddressPanel = new JPanel();
-	private JPanel renterTelephoneNumberPanel = new JPanel();
-	private JPanel renterEmailAddressPanel = new JPanel();
+	private JPanel panelRenterName = new JPanel();
+	private JPanel panelRenterAddress = new JPanel();
+	private JPanel panelRenterTelephoneNumber = new JPanel();
+	private JPanel panelRenterEmailAddress = new JPanel();
 	
 	private JLabel labelRenterName = new JLabel("Renter Name");
 	private JLabel labelRenterAddress = new JLabel("Renter Address");
@@ -70,7 +70,7 @@ public class BorrowForm extends JFrame {
 	
 	
 	// Button Event Listener
-	private JPanel borrowFormButtonPanel = new JPanel();
+	private JPanel panelBorrowFormButton = new JPanel();
 	
 	private JButton buttonAdd = new JButton("Add");
 	private JButton buttonDelete = new JButton("Delete");
@@ -78,124 +78,124 @@ public class BorrowForm extends JFrame {
 	
 	
 	void init_car_components() {
-		carDetailPanel.setLayout(new GridLayout(5, 1));
+		panelCarDetail.setLayout(new GridLayout(5, 1));
 		
-		carHeaderPanel.setLayout(new FlowLayout());
-		carHeaderPanel.add(new JLabel("Car Details"));
+		panelCarHeader.setLayout(new FlowLayout());
+		panelCarHeader.add(new JLabel("Car Details"));
 		
-		carDetailPanel.add(carHeaderPanel);
+		panelCarDetail.add(panelCarHeader);
 		
 		
-		carTypePanel.setLayout(new GridLayout(1, 4));
-		carTypePanel.add(new JPanel());
-		carTypePanel.add(labelCarType);
+		panelCarType.setLayout(new GridLayout(1, 4));
+		panelCarType.add(new JPanel());
+		panelCarType.add(labelCarType);
 		textFieldCarType.setPreferredSize(new Dimension(300, 25));
-		carTypePanel.add(textFieldCarType);
-		carTypePanel.add(new JPanel());
+		panelCarType.add(textFieldCarType);
+		panelCarType.add(new JPanel());
 		
-		carDetailPanel.add(carTypePanel);
+		panelCarDetail.add(panelCarType);
 		
 		
-		carDescriptionPanel.setLayout(new GridLayout(1, 4));
-		carDescriptionPanel.add(new JPanel());
-		carDescriptionPanel.add(labelCarDescription);
+		panelCarDescription.setLayout(new GridLayout(1, 4));
+		panelCarDescription.add(new JPanel());
+		panelCarDescription.add(labelCarDescription);
 		textFieldCarDescription.setPreferredSize(new Dimension(300, 25));
-		carDescriptionPanel.add(textFieldCarDescription);
-		carDescriptionPanel.add(new JPanel());
+		panelCarDescription.add(textFieldCarDescription);
+		panelCarDescription.add(new JPanel());
 		
-		carDetailPanel.add(carDescriptionPanel);
+		panelCarDetail.add(panelCarDescription);
 		
 		
-		carRentPeriodPanel.setLayout(new GridLayout(1, 4));
-		carRentPeriodPanel.add(new JPanel());
-		carRentPeriodPanel.add(labelCarRentPeriod);
+		panelCarRentPeriod.setLayout(new GridLayout(1, 4));
+		panelCarRentPeriod.add(new JPanel());
+		panelCarRentPeriod.add(labelCarRentPeriod);
 		textFieldCarRentPeriod.setPreferredSize(new Dimension(300, 25));
-		carRentPeriodPanel.add(textFieldCarRentPeriod);
-		carRentPeriodPanel.add(new JPanel());
+		panelCarRentPeriod.add(textFieldCarRentPeriod);
+		panelCarRentPeriod.add(new JPanel());
 		
-		carDetailPanel.add(carRentPeriodPanel);
+		panelCarDetail.add(panelCarRentPeriod);
 		
 		
-		carLicensePlatePanel.setLayout(new GridLayout(1, 4));
-		carLicensePlatePanel.add(new JPanel());
-		carLicensePlatePanel.add(labelCarLicensePlate);
+		panelCarLicensePlate.setLayout(new GridLayout(1, 4));
+		panelCarLicensePlate.add(new JPanel());
+		panelCarLicensePlate.add(labelCarLicensePlate);
 		textFieldCarLicensePlate.setPreferredSize(new Dimension(300, 25));
-		carLicensePlatePanel.add(textFieldCarLicensePlate);
-		carLicensePlatePanel.add(new JPanel());
+		panelCarLicensePlate.add(textFieldCarLicensePlate);
+		panelCarLicensePlate.add(new JPanel());
 		
-		carDetailPanel.add(carLicensePlatePanel);
+		panelCarDetail.add(panelCarLicensePlate);
 		
 		
-		windowPanel.add(carDetailPanel);
+		panelWindow.add(panelCarDetail);
 		
-		spacingPanel.setPreferredSize(new Dimension(5, 1));
-		windowPanel.add(spacingPanel);
+		panelSpacing.setPreferredSize(new Dimension(5, 1));
+		panelWindow.add(panelSpacing);
 	}
 	
 	void init_renter_components() {
-		renterDetailPanel.setLayout(new GridLayout(5, 1));
+		panelRenterDetail.setLayout(new GridLayout(5, 1));
 		
-		renterHeaderPanel.setLayout(new FlowLayout());
-		renterHeaderPanel.add(new JLabel("Renter Details"));
+		panelRenterHeader.setLayout(new FlowLayout());
+		panelRenterHeader.add(new JLabel("Renter Details"));
 		
-		renterDetailPanel.add(renterHeaderPanel);
+		panelRenterDetail.add(panelRenterHeader);
 		
 		
-		renterNamePanel.setLayout(new GridLayout(1, 4));
-		renterNamePanel.add(new JPanel());
-		renterNamePanel.add(labelRenterName);
+		panelRenterName.setLayout(new GridLayout(1, 4));
+		panelRenterName.add(new JPanel());
+		panelRenterName.add(labelRenterName);
 		textFieldRenterName.setPreferredSize(new Dimension(300, 25));
-		renterNamePanel.add(textFieldRenterName);
-		renterNamePanel.add(new JPanel());
+		panelRenterName.add(textFieldRenterName);
+		panelRenterName.add(new JPanel());
 		
-		renterDetailPanel.add(renterNamePanel);
+		panelRenterDetail.add(panelRenterName);
 		
 		
-		renterAddressPanel.setLayout(new GridLayout(1,4));
-		renterAddressPanel.add(new JPanel());
-		renterAddressPanel.add(labelRenterAddress);
-		renterAddressPanel.add(textFieldRenterAddress);
-		renterAddressPanel.add(new JPanel());
+		panelRenterAddress.setLayout(new GridLayout(1,4));
+		panelRenterAddress.add(new JPanel());
+		panelRenterAddress.add(labelRenterAddress);
+		panelRenterAddress.add(textFieldRenterAddress);
+		panelRenterAddress.add(new JPanel());
 		
-		renterDetailPanel.add(renterAddressPanel);
+		panelRenterDetail.add(panelRenterAddress);
 
 		
-		renterTelephoneNumberPanel.setLayout(new GridLayout(1,4));
-		renterTelephoneNumberPanel.add(new JPanel());
-		renterTelephoneNumberPanel.add(labelRenterTelephoneNumber);
-		renterTelephoneNumberPanel.add(textFieldRenterTelephoneNumber);
-		renterTelephoneNumberPanel.add(new JPanel());
+		panelRenterTelephoneNumber.setLayout(new GridLayout(1,4));
+		panelRenterTelephoneNumber.add(new JPanel());
+		panelRenterTelephoneNumber.add(labelRenterTelephoneNumber);
+		panelRenterTelephoneNumber.add(textFieldRenterTelephoneNumber);
+		panelRenterTelephoneNumber.add(new JPanel());
 		
-		renterDetailPanel.add(renterTelephoneNumberPanel);
+		panelRenterDetail.add(panelRenterTelephoneNumber);
 		
 		
-		renterEmailAddressPanel.setLayout(new GridLayout(1,4));
-		renterEmailAddressPanel.add(new JPanel());
-		renterEmailAddressPanel.add(labelRenterEmailAddress);
-		renterEmailAddressPanel.add(textFieldRenterEmailAddress);
-		renterEmailAddressPanel.add(new JPanel());
+		panelRenterEmailAddress.setLayout(new GridLayout(1,4));
+		panelRenterEmailAddress.add(new JPanel());
+		panelRenterEmailAddress.add(labelRenterEmailAddress);
+		panelRenterEmailAddress.add(textFieldRenterEmailAddress);
+		panelRenterEmailAddress.add(new JPanel());
 		
-		renterDetailPanel.add(renterEmailAddressPanel);
+		panelRenterDetail.add(panelRenterEmailAddress);
 		
-		spacingPanel.setPreferredSize(new Dimension(3, 1));
-		windowPanel.add(renterDetailPanel);
-		windowPanel.add(spacingPanel);
+		panelSpacing.setPreferredSize(new Dimension(3, 1));
+		panelWindow.add(panelRenterDetail);
+		panelWindow.add(panelSpacing);
 	}
 	
 	void init_button_components() {
-//		borrowFormButtonPanel.setLayout(new FlowLayout());
+//		panelBorrowFormButton.setLayout(new FlowLayout());
 		
-		borrowFormButtonPanel.add(buttonAdd);
-		borrowFormButtonPanel.add(buttonDelete);
-		borrowFormButtonPanel.add(buttonEdit);
+		panelBorrowFormButton.add(buttonAdd);
+		panelBorrowFormButton.add(buttonDelete);
+		panelBorrowFormButton.add(buttonEdit);
 		
-		windowPanel.add(borrowFormButtonPanel);
+		panelWindow.add(panelBorrowFormButton);
 	}
 	
 	void init_window() {
 //		setLayout(new GridLayout(10, 1));
-//		windowPanel.setLayout(new GridLayout(4, 1));
-		add(windowPanel);
+//		panelWindow.setLayout(new GridLayout(4, 1));
+		add(panelWindow);
 		
 		setTitle("Rent Form");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

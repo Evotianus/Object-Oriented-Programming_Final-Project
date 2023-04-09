@@ -1,0 +1,2 @@
+Honda Silvia#Sedan#F 4646 OY#true
+Pajero#SUV#F 789 HI#false

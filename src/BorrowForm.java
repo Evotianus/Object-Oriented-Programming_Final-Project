@@ -76,6 +76,7 @@ public class BorrowForm extends JFrame {
 	private JButton buttonDelete = new JButton("Delete");
 	private JButton buttonEdit = new JButton("Edit");
 	
+	private MainForm mainForm;
 	
 	void init_car_components() {
 		panelCarDetail.setLayout(new GridLayout(5, 1));
@@ -198,22 +199,24 @@ public class BorrowForm extends JFrame {
 		add(panelWindow);
 		
 		setTitle("Rent Form");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(650, 350);
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setVisible(true);
+//		setVisible(true);
 	}
 	
-	public BorrowForm() {
+	public BorrowForm(MainForm mainForm) {
 		// TODO Auto-generated constructor stub
+		this.mainForm = mainForm;
+		
 		init_car_components();
 		init_renter_components();
 		init_button_components();
 		init_window(); 	
 	}
 	
-	public static void main(String[] args) {
-		new BorrowForm();
-	}
+//	public static void main(String[] args) {
+//		new BorrowForm();
+//	}
 }

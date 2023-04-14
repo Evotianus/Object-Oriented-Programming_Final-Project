@@ -1,8 +1,13 @@
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.EventListener;
 import java.util.Scanner;
 
 import javax.swing.JDesktopPane;
@@ -17,7 +22,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class MainForm extends JFrame {
+public class MainForm extends JFrame implements ActionListener, WindowListener {
 	
 	private JDesktopPane jdPane = new JDesktopPane();
 	
@@ -26,13 +31,17 @@ public class MainForm extends JFrame {
 	private JMenuBar menuBar = new JMenuBar();
 	
 	private JMenu menuForm = new JMenu("Form");
-	private JMenu menuRegistration = new JMenu("Registration");
+	private JMenu menuUser = new JMenu("User");
 	
-	private JMenuItem menuItemRegistrationChangePassword = new JMenuItem("Change Password");
-	private JMenuItem menuItemRegistrationLogOut = new JMenuItem("Log Out");
+	private JMenuItem menuItemUserChangePassword = new JMenuItem("Change Password");
+	private JMenuItem menuItemUserLogOut = new JMenuItem("Log Out");
 	private JMenuItem menuItemFormRent = new JMenuItem("Rent");
 	private JMenuItem menuItemFormReturn = new JMenuItem("Return");
 	
+	private BorrowForm borrowForm = new BorrowForm(this);
+	private ReturnForm returnForm = new ReturnForm(this);
+	private ChangePasswordForm changePasswordForm = new ChangePasswordForm(this);
+	private LoginForm loginForm = new LoginForm(this);
 	
 	// Table
 	private JTable table_car;
@@ -50,6 +59,17 @@ public class MainForm extends JFrame {
 		menuForm.add(new JSeparator());
 		menuForm.add(menuItemFormReturn);
 		
+		menuBar.add(menuUser);
+		menuUser.add(menuItemUserChangePassword);
+		menuUser.add(new JSeparator());
+		menuUser.add(menuItemUserLogOut);
+		
+		
+		menuItemFormRent.addActionListener(this);
+		menuItemFormReturn.addActionListener(this);
+		
+		menuItemUserChangePassword.addActionListener(this);
+		menuItemUserLogOut.addActionListener(this);
 //		jdPane.add(menuBar);
 	}
 	
@@ -124,6 +144,7 @@ public class MainForm extends JFrame {
 	}
 	
 	public MainForm() {
+		loginForm.show();
 		// TODO Auto-generated constructor stub
 		init_components();
 		init_car_data();
@@ -138,11 +159,72 @@ public class MainForm extends JFrame {
 		setSize(700, 500);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setVisible(true);
+		setVisible(false);
 	}
 	
 	public static void main(String[] args) {
 		new MainForm();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		if ( e.getSource().equals(menuItemFormRent) ) {
+//			this.hide();
+			borrowForm.show();
+		}
+		
+		if ( e.getSource().equals(menuItemFormReturn) ) {
+//			this.hide();
+			returnForm.show();
+		}
+		
+		if ( e.getSource().equals(menuItemUserChangePassword) ) {
+			changePasswordForm.show();
+		}
+		
+	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosed(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

@@ -77,6 +77,9 @@ public class ReturnForm extends JFrame {
 	private JButton buttonEdit = new JButton("Edit");
 	
 	
+	private MainForm mainForm;
+	
+	
 	void init_car_components() {
 		panelCarDetail.setLayout(new GridLayout(4, 1));
 		
@@ -198,21 +201,23 @@ public class ReturnForm extends JFrame {
 		add(panelWindow);
 		
 		setTitle("Rent Form");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(650, 350);
 		setLocationRelativeTo(null);
 		setResizable(false);
-		setVisible(true);
+		setVisible(false);
 	}
 	
-	public ReturnForm() {
+	public ReturnForm(MainForm mainForm) {
+		this.mainForm = mainForm;
+		
 		init_car_components();
 		init_renter_components();
 		init_button_components();
 		init_window(); 	
 	}
 	
-	public static void main(String[] args) {
-		new ReturnForm();
-	}
+//	public static void main(String[] args) {
+//		new ReturnForm();
+//	}
 }

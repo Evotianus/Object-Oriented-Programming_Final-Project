@@ -3,6 +3,8 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,7 +20,7 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Text;
 import org.w3c.dom.UserDataHandler;
 
-public class LoginForm extends JFrame {
+public class LoginForm extends JFrame implements ActionListener {
 	
 	private JPanel windowPanel = new JPanel();
 	
@@ -38,6 +40,8 @@ public class LoginForm extends JFrame {
 	
 	private JButton buttonLogin = new JButton("Login");
 	private JButton buttonRegister = new JButton("Register");
+	
+	private MainForm mainForm;
 	
 	public void init_window() {		
 		windowPanel.setLayout(new BorderLayout());
@@ -71,11 +75,14 @@ public class LoginForm extends JFrame {
 		buttonPanel.add(buttonLogin);
 		buttonPanel.add(buttonRegister);
 		
+		buttonLogin.addActionListener(this);
+		
 		windowPanel.add(buttonPanel, "South");
 	}
 	
-	public LoginForm() {
-		// TODO Auto-generated constructor stub
+	public LoginForm(MainForm mainForm) {
+		this.mainForm = mainForm;
+		
 		init_window();
 		init_components();
 		
@@ -84,10 +91,20 @@ public class LoginForm extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400, 200);
 		setLocationRelativeTo(null);
-		setVisible(true);
+//		setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if ( e.getSource().equals(buttonLogin) ) {
+			this.hide();
+			mainForm.show();
+		}
+		
 	}
 	
-	public static void main(String[] args) {
-		new LoginForm();
-	}
+//	public static void main(String[] args) {
+//		new LoginForm();
+//	}
 }

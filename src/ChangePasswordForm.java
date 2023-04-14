@@ -41,6 +41,8 @@ public class ChangePasswordForm extends JFrame {
 	
 	private JButton buttonChangePassword = new JButton("Update");
 	
+	private MainForm mainForm;
+	
 	public void init_window() {		
 		windowPanel.setLayout(new BorderLayout());
 		
@@ -83,20 +85,22 @@ public class ChangePasswordForm extends JFrame {
 		windowPanel.add(buttonPanel, "South");
 	}
 	
-	public ChangePasswordForm() {
+	public ChangePasswordForm(MainForm mainForm) {
+		this.mainForm = mainForm;
+		
 		// TODO Auto-generated constructor stub
 		init_window();
 		init_components();
 		
 		add(windowPanel);
 		
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(500, 200);
 		setLocationRelativeTo(null);
-		setVisible(true);
+		setVisible(false);
 	}
 	
-	public static void main(String[] args) {
-		new ChangePasswordForm();
-	}
+//	public static void main(String[] args) {
+//		new ChangePasswordForm();
+//	}
 }

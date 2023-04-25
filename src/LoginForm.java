@@ -6,9 +6,11 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -93,15 +95,57 @@ public class LoginForm extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 //		setVisible(true);
 	}
+	
+	public boolean inputValidator() {
+		String username = textFieldUsername.getText();
+		String password = textFieldPassword.getText();
+		boolean flag = false;
+		
+		String errorMessage = new String();		
+		
+		if ( username.length() < 1 ) {
+			errorMessage += "Username must be filled!\n";
+			flag = true;
+		}
+		
+		if ( password.length() < 1  ) {
+			errorMessage += "Password must be filled!\n";
+			flag = true;
+		}
+		
+		if ( flag == true ) {
+			JOptionPane.showMessageDialog(null, errorMessage, "Input Error!", JOptionPane.ERROR_MESSAGE);
+			
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public boolean authValidator() {	
+		if ( mainForm.authAccount(textFieldUsername.getText(), textFieldPassword.getText()) ) {
+			return true;
+		}
+		
+		JOptionPane.showMessageDialog(null, "Username or Password error!", "Login Error!", JOptionPane.ERROR_MESSAGE);
+		return false;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		if ( e.getSource().equals(buttonLogin) ) {
-			this.hide();
-			mainForm.show();
+		if ( e.getSource().equals(buttonLogin) ) {	
+			boolean isInputValid = inputValidator();
+			
+			if ( !isInputValid ) {
+				return;
+			}
+			
+			boolean isAccountValid = authValidator();
+			if ( isInputValid && isAccountValid ) {
+				this.hide();
+				mainForm.show();				
+			}
 		}
-		
 	}
 	
 //	public static void main(String[] args) {

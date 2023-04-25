@@ -1,0 +1,8 @@
+John Smith#123#123 Main St, New York, NY 10001#123 Main St, New York, NY 10001#JohnSmith@gmail.com#true
+Jane Lee#123#456 Elm St, Chicago, IL 60601#456 Elm St, Chicago, IL 60601#JaneLee@gmail.com#false
+Bob Garcia#123#789 Oak St, Houston, TX 77001#789 Oak St, Houston, TX 77001#BobGarcia@gmail.com#false
+Alice Brown#123#1010 Broadway, Los Angeles, CA 90001#1010 Broadway, Los Angeles, CA 90001#AliceBrown@gmail.com#false
+Mike Johnson#123#111 Maple Ave, Phoenix, AZ 85001#111 Maple Ave, Phoenix, AZ 85001#MikeJohnson@gmail.com#false
+John Lee#123#222 Main St, New York, NY 10001#222 Main St, New York, NY 10001#JohnLee@gmail.com#false
+Jane Smith#123#333 Elm St, Chicago, IL 60601#333 Elm St, Chicago, IL 60601#JaneSmith@gmail.com#true
+user#admin#Jl. Makan#Jl. Makan#user@gmail.com#true

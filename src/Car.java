@@ -1,8 +1,9 @@
 
 public class Car {
 	
-	private String carName;
+	private String carBrand;
 	private String carType;
+	private String carDescription;
 	private String carLicensePlate;
 	private boolean isCarAvailable;
 	
@@ -10,20 +11,21 @@ public class Car {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Car(String carName, String carType, String carLicensePlate, boolean isCarAvailable) {
+	public Car(String carBrand, String carType, String carDescription, String carLicensePlate, boolean isCarAvailable) {
 		super();
-		this.carName = carName;
+		this.carBrand = carBrand;
 		this.carType = carType;
+		this.carDescription = carDescription;
 		this.carLicensePlate = carLicensePlate;
 		this.isCarAvailable = isCarAvailable;
 	}
 
 	public String getCarName() {
-		return carName;
+		return carBrand;
 	}
 
-	public void setCarName(String carName) {
-		this.carName = carName;
+	public void setCarName(String carBrand) {
+		this.carBrand = carBrand;
 	}
 
 	public String getCarType() {
@@ -34,6 +36,14 @@ public class Car {
 		this.carType = carType;
 	}
 
+	public String getCarDescription() {
+		return carDescription;
+	}
+	
+	public void setCarDescription(String carDescription) {
+		this.carDescription = carDescription;
+	}
+	
 	public String getCarLicensePlate() {
 		return carLicensePlate;
 	}

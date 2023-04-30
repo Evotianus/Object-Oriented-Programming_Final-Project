@@ -5,4 +5,4 @@ Alice Brown#123#1010 Broadway, Los Angeles, CA 90001#1010 Broadway, Los Angeles,
 Mike Johnson#123#111 Maple Ave, Phoenix, AZ 85001#111 Maple Ave, Phoenix, AZ 85001#MikeJohnson@gmail.com#false
 John Lee#123#222 Main St, New York, NY 10001#222 Main St, New York, NY 10001#JohnLee@gmail.com#false
 Jane Smith#123#333 Elm St, Chicago, IL 60601#333 Elm St, Chicago, IL 60601#JaneSmith@gmail.com#true
-user#admin#Jl. Makan#Jl. Makan#user@gmail.com#true
+user#admin2#Jl. Makan#Jl. Makan#user@gmail.com#true

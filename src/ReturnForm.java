@@ -79,10 +79,10 @@ public class ReturnForm extends JFrame implements ActionListener {
 	private JPanel panelRenterDayElapsed = new JPanel();
 	private JPanel panelRenterFine = new JPanel();
 	
-	private JLabel labelRenterName = new JLabel("Customer Name");
+	private JLabel labelRenterName = new JLabel("Renter Name");
 	private JLabel labelCarRentDate = new JLabel("Car Rent Date");
-	private JLabel labelRenterDayElapsed = new JLabel("Day Elapsed");
-	private JLabel labelRenterFine = new JLabel("Fine");
+	private JLabel labelRenterDayElapsed = new JLabel("Rent Period");
+	private JLabel labelRenterFine = new JLabel("Rental Fee");
 	
 	private boolean isDateFilled = false;
 	private boolean isRentDateFilled = false;
@@ -303,8 +303,7 @@ public class ReturnForm extends JFrame implements ActionListener {
 //		setLayout(new GridLayout(10, 1));
 //		panelWindow.setLayout(new GridLayout(4, 1));
 		add(panelWindow);
-		
-		setTitle("Rent Form");
+		setTitle("Return Form");
 //		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(650, 350);
 		setLocationRelativeTo(null);

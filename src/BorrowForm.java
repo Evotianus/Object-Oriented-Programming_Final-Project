@@ -440,7 +440,8 @@ public class BorrowForm extends JFrame implements ActionListener {
 			String carBrand;
 			String carType;
 			String carDescription = textFieldCarDescription.getText();
-			String carRentDate = model.getDay() + "-" + model.getMonth() + 1 + "-" + model.getYear();
+			int month = model.getMonth() + 1;
+			String carRentDate = model.getDay() + "-" + month+ "-" + model.getYear();
 			String carLicensePlate = textFieldCarLicensePlate.getText();
 			String renterName;
 			String renterAddress = textFieldRenterAddress.getText();

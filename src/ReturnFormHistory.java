@@ -30,7 +30,7 @@ public class ReturnFormHistory extends JFrame implements ActionListener, WindowL
     private MainForm mainForm;
 
     public void init_table_rentedCar() {
-		String[] column = {"Car Brand", "Car Type", "Rent Date", "Return Date", "Licence Plate", "Renter", "Total Fine"};
+		String[] column = {"Car Brand", "Car Type", "Rent Date", "Return Date", "Licence Plate", "Renter", "Total Rental Fee"};
 		
 		dtm_table_rentedCar = new DefaultTableModel(column, 0);
 		
